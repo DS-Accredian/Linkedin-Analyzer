@@ -1,0 +1,728 @@
+[
+  {
+    "id": 1,
+    "section": "01 Profile Foundations & Audit",
+    "title": "Complete PDF Profile Audit",
+    "description": "Comprehensive gap analysis run against raw extracted PDF profile text.",
+    "target_gaps": [
+      "gap",
+      "audit",
+      "score",
+      "health",
+      "overview",
+      "foundations",
+      "complete"
+    ],
+    "prompt": "# MISSION\nYou are an Executive Personal Branding Strategist and Technical Recruiter. Perform a high-converting audit on the provided LinkedIn PDF export text.\n\n# USER INPUT DATA\nTarget Industry: [YOUR TARGET INDUSTRY]\nTarget Role: [YOUR TARGET ROLE]\nRaw Profile Text:\n[PASTE EXTRACTED PDF TEXT HERE]\n\n# EVALUATION PROTOCOL\n1. SECTION-BY-SECTION GAP ANALYSIS: Identify missing keywords, weak framing, or missing metrics across Headline, Summary, Experience, and Skills.\n2. RECRUITER FRICTION POINTS: Highlight the top 3 reasons a recruiter would pass on this profile.\n3. ACTIONABLE REWRITE ROADMAP: Provide a prioritized step-by-step checklist to elevate this profile to the top 5% of candidate searches.",
+    "pro_tips": [
+      "Run this audit every 3-6 months or whenever shifting target roles.",
+      "Provide specific job target titles for more accurate recruiter evaluation."
+    ]
+  },
+  {
+    "id": 2,
+    "section": "01 Profile Foundations & Audit",
+    "title": "Profile Visual Branding Strategy",
+    "description": "Actionable guidance for optimizing visual elements based on your target role.",
+    "target_gaps": [
+      "photo",
+      "banner",
+      "visual",
+      "image",
+      "cover",
+      "picture",
+      "branding"
+    ],
+    "prompt": "You are a personal branding visual communication expert. Provide actionable guidance for optimizing my LinkedIn profile photo and banner strategy.\n\nMy Context:\n- Industry: [YOUR TARGET INDUSTRY]\n- Target Seniority: [YOUR TARGET ROLE]\n- Desired Perception: [e.g., Innovative, Authoritative, Approachable]\n\nProvide:\n1. PROFILE PHOTO SPECIFICATION: Exact composition, attire, background contrast, and facial expression.\n2. BANNER / COVER IMAGE STRATEGY: Dimensions (1584x396px), 3 distinct concept layouts, and color psychology recommendations.\n3. BRAND CONSISTENCY: How to align visual assets with my target industry's norms.",
+    "pro_tips": [
+      "LinkedIn banner ideal dimensions are 1584 x 396 pixels.",
+      "Ensure high contrast between your headshot background and your profile banner."
+    ]
+  },
+  {
+    "id": 3,
+    "section": "01 Profile Foundations & Audit",
+    "title": "LinkedIn SSI Score Improvement Plan",
+    "description": "Tactical improvement plan to raise your Social Selling Index score.",
+    "target_gaps": [
+      "ssi",
+      "social selling",
+      "engagement",
+      "index",
+      "score",
+      "algorithm"
+    ],
+    "prompt": "You are a LinkedIn growth strategist. My current Social Selling Index (SSI) breakdown is:\n- Establish Professional Brand: [SCORE /25]\n- Find the Right People: [SCORE /25]\n- Engage with Insights: [SCORE /25]\n- Build Relationships: [SCORE /25]\n- Total SSI: [TOTAL /100]\n\nTarget Goal: [YOUR TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\n\nProvide a tactical improvement plan including: 15-minute daily routine, weekly engagement actions, content tactics, and a 30-day target score increase strategy.",
+    "pro_tips": [
+      "SSI scores above 70 place you in the top tier of active search results.",
+      "Daily 15-minute interactions boost algorithm placement faster than weekly bursts."
+    ]
+  },
+  {
+    "id": 4,
+    "section": "02 Header & Headline",
+    "title": "Power Headline Generator",
+    "description": "Generate distinct, high-converting LinkedIn headlines.",
+    "target_gaps": [
+      "headline",
+      "title",
+      "hook",
+      "first impression",
+      "tagline"
+    ],
+    "prompt": "You are a LinkedIn copywriting specialist. Generate 8 distinct, high-impact headline variations for my profile based on my raw information.\n\nMy Inputs:\n- Current Headline: [CURRENT HEADLINE]\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Key Tech Stack / Core Skills: [PASTE SKILLS LIST]\n\nFormulas to use:\n1. Role + Specialized Skill + Business Impact\n2. Keyword-Rich SEO Authority\n3. Problem-Solver Value Proposition\n4. Achievement-Led Authority\n\nEnsure every option is strictly under 220 characters.",
+    "pro_tips": [
+      "The algorithm heavily weights the first 50 characters of your headline.",
+      "Avoid generic buzzwords like 'Results-Driven' or 'Motivated Leader'."
+    ]
+  },
+  {
+    "id": 5,
+    "section": "02 Header & Headline",
+    "title": "Personal Brand Statement Builder",
+    "description": "Build a clear, compelling personal brand narrative.",
+    "target_gaps": [
+      "brand",
+      "positioning",
+      "narrative",
+      "values",
+      "identity",
+      "message"
+    ],
+    "prompt": "You are an executive career coach. Build a cohesive personal brand statement from my input data.\n\nInputs:\n- Core Expertise: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Profile Summary:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nGenerate:\n1. ONE-SENTENCE BRAND STATEMENT (Under 20 words)\n2. THREE-SENTENCE BRAND NARRATIVE\n3. THREE CORE BRAND PILLARS\n4. A 10-WORD BRAND TAGLINE",
+    "pro_tips": [
+      "Use your 10-word tagline as a secondary anchor in your banner or headline."
+    ]
+  },
+  {
+    "id": 6,
+    "section": "02 Header & Headline",
+    "title": "Headline A/B Testing Framework",
+    "description": "Evaluate and test multiple headline options rigorously.",
+    "target_gaps": [
+      "a/b test",
+      "headline test",
+      "compare",
+      "conversion",
+      "testing"
+    ],
+    "prompt": "You are a data-driven growth expert. Evaluate these 3 LinkedIn headline options:\nOption A: [CURRENT HEADLINE]\nOption B: [TARGET ROLE] | Driving Scalable Growth in [YOUR TARGET INDUSTRY]\nOption C: Transforming Business Outcomes as a Senior [TARGET ROLE]\n\nTarget Goal: [TARGET ROLE]\n\nAnalyze each across Keyword Density, Recruiter CTR, and Clarity. Rank them 1-3 and provide a 14-day A/B testing plan.",
+    "pro_tips": [
+      "Run each test headline for at least 14 days to collect sufficient search appearance data."
+    ]
+  },
+  {
+    "id": 7,
+    "section": "02 Header & Headline",
+    "title": "Industry-Specific Keyword Map",
+    "description": "SEO keyword strategy for profile search placement.",
+    "target_gaps": [
+      "seo",
+      "keywords",
+      "search",
+      "visibility",
+      "discoverability"
+    ],
+    "prompt": "You are an ATS and LinkedIn Search Optimization Specialist. Construct a high-density keyword map for my profile.\n\nInputs:\n- Target Role Title: [TARGET ROLE]\n- Primary Domain/Industry: [YOUR TARGET INDUSTRY]\n- Profile Context:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nDeliver:\n1. TIER 1: Core Primary Keywords (5-8 exact match titles/tools)\n2. TIER 2: Secondary Domain Keywords (10-15 sub-skills)\n3. TIER 3: Long-Tail & Trending Industry Terminology\n4. Placement Map: Exactly where to integrate each keyword across profile sections.",
+    "pro_tips": [
+      "Exact match job titles increase recruiter search ranking significantly.",
+      "Re-evaluate keyword trends quarterly as industry terminology shifts."
+    ]
+  },
+  {
+    "id": 8,
+    "section": "03 Summary",
+    "title": "Magnetic Summary Section from Scratch",
+    "description": "Craft an engaging About section with a strong narrative hook.",
+    "target_gaps": [
+      "about",
+      "summary",
+      "story",
+      "bio",
+      "narrative",
+      "boring"
+    ],
+    "prompt": "You are a master LinkedIn copywriter. Draft a complete 'About' section from scratch using my raw details.\n\nRaw Inputs:\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Target Role: [TARGET ROLE]\n- Raw Profile Data: [PASTE EXTRACTED PDF TEXT HERE]\n\nStructure Requirements:\n1. HOOK: First 265 characters designed to prevent mobile truncation ('see more').\n2. NARRATIVE ARC: Core journey and domain expertise.\n3. IMPACT HIGHLIGHTS: Bulleted list of key technical or strategic outcomes.\n4. CALL TO ACTION (CTA): Clear contact invitation.\nTotal length: Under 2,000 characters.",
+    "pro_tips": [
+      "Keep the first 2-3 lines compelling; mobile apps cut off text after 265 characters.",
+      "Write in first-person ('I built', 'I led') for better engagement."
+    ]
+  },
+  {
+    "id": 9,
+    "section": "03 Summary",
+    "title": "Summary Section Polish & Upgrade",
+    "description": "Elevate an existing Summary section with metrics and active language.",
+    "target_gaps": [
+      "rewrite",
+      "passive",
+      "update about",
+      "polish",
+      "upgrade"
+    ],
+    "prompt": "You are a senior LinkedIn copywriter. Diagnose and rewrite my existing Summary section.\n\nCurrent Summary Text:\n[PASTE EXISTING SUMMARY]\n\nTarget Goal: [YOUR TARGET ROLE] in [YOUR TARGET INDUSTRY]\n\nPerform:\n1. DIAGNOSTIC: Rate hook strength, keyword density, and formatting out of 10.\n2. REWRITE: Produce a polished version eliminating passive language, integrating high-impact metrics, and adding clear white space for readability.",
+    "pro_tips": [
+      "Replace vague phrases like 'passionate professional' with concrete metrics.",
+      "Use short paragraphs (2-3 sentences max) to improve mobile readability."
+    ]
+  },
+  {
+    "id": 10,
+    "section": "03 Summary",
+    "title": "Career Pivot Summary Writer",
+    "description": "Bridge past experience with a new target career direction.",
+    "target_gaps": [
+      "transition",
+      "pivot",
+      "career change",
+      "new industry",
+      "switcher"
+    ],
+    "prompt": "You are a career transition specialist. Write a LinkedIn About section that bridges my current experience with my target direction.\n\nTransition Details:\n- Raw Experience Data: [PASTE DUTIES]\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n\nWrite an About section that reframes past achievements as transferable strengths, articulates the rationale for the pivot, and utilizes the target industry's terminology.",
+    "pro_tips": [
+      "Frame past non-linear experience as a cross-disciplinary advantage.",
+      "Highlight recent certifications prominently in the narrative."
+    ]
+  },
+  {
+    "id": 11,
+    "section": "03 Summary",
+    "title": "Founder & Entrepreneur Summary Builder",
+    "description": "Build credibility to attract clients, investors, and key talent.",
+    "target_gaps": [
+      "founder",
+      "entrepreneur",
+      "startup",
+      "icp",
+      "traction",
+      "business owner"
+    ],
+    "prompt": "You are a startup branding expert. Draft a Founder About section.\n\nInputs:\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Target Role: [TARGET ROLE]\n- Raw Profile Details:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nProduce a Summary containing a Pain-Point Hook, Origin Story, Traction Highlights, and 3 distinct CTAs (Clients, Investors, Talent).",
+    "pro_tips": [
+      "Founders with strong personal brands generate significantly higher inbound leads."
+    ]
+  },
+  {
+    "id": 12,
+    "section": "04 Experience",
+    "title": "STAR-Method Experience Bullet Writer",
+    "description": "Transform duty lists into metric-backed STAR formula bullets.",
+    "target_gaps": [
+      "experience",
+      "bullets",
+      "job description",
+      "roles",
+      "history",
+      "outcomes"
+    ],
+    "prompt": "You are a senior resume writer and recruiter. Rewrite my raw job responsibilities into metric-driven STAR (Situation, Task, Action, Result) bullets.\n\nRole Input:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Raw Experience Duties: [PASTE DUTIES]\n\nDeliver:\n1. 1-sentence Company/Scope Overview\n2. 5-7 high-impact experience bullets starting with strong action verbs (e.g., Engineered, Spearheaded, Orchestrated) formatted as Action + Context + Quantified Outcome.",
+    "pro_tips": [
+      "Recruiters spend an average of 6 seconds skimming experience sections.",
+      "Estimate ranges (e.g., '20-30% efficiency increase') if exact figures aren't public."
+    ]
+  },
+  {
+    "id": 13,
+    "section": "04 Experience",
+    "title": "Quantify Achievement Uncoverer",
+    "description": "Extract hidden metrics from qualitative or vague responsibilities.",
+    "target_gaps": [
+      "metrics",
+      "numbers",
+      "data",
+      "vague",
+      "quantify",
+      "results",
+      "impact"
+    ],
+    "prompt": "You are a data storytelling specialist. Help me quantify these qualitative responsibility statements:\n\nUnquantified Bullets / Experience:\n[PASTE DUTIES]\n\nFor each responsibility identified:\n1. Identify the underlying scale, time saved, revenue impacted, or error reduction metric.\n2. Ask 2 targeted questions to extract real numbers.\n3. Provide 3 rewrite options: Fully Quantified, Estimated Range, and Qualitative Impact.",
+    "pro_tips": [
+      "Quantify scale (e.g., team size, user base, codebase size) even if financial metrics aren't available.",
+      "Review past performance reviews or sprint retros for forgotten metrics."
+    ]
+  },
+  {
+    "id": 14,
+    "section": "04 Experience",
+    "title": "Leadership & Promotion Story Narrative",
+    "description": "Demonstrate clear career progression and leadership development.",
+    "target_gaps": [
+      "promotion",
+      "leadership",
+      "progression",
+      "trajectory",
+      "manager",
+      "growth"
+    ],
+    "prompt": "You are a career narrative strategist. Construct a cohesive leadership progression narrative across my experience.\n\nProgression Input:\n- Target Role: [TARGET ROLE]\n- Experience History:\n[PASTE DUTIES]\n\nDeliver:\n1. A 150-word Leadership Arc Overview\n2. Progression Framing explicitly explaining why career advancements occurred\n3. Escalation Bullets highlighting increased budget/team authority.",
+    "pro_tips": [
+      "Explicitly use phrases like 'Promoted to lead...' so recruiters instantly spot upward growth."
+    ]
+  },
+  {
+    "id": 15,
+    "section": "04 Experience",
+    "title": "Consultant & Freelancer Portfolio Experience Framer",
+    "description": "Frame non-linear or contract work into a cohesive experience entry.",
+    "target_gaps": [
+      "freelance",
+      "consulting",
+      "independent",
+      "portfolio",
+      "projects",
+      "self-employed"
+    ],
+    "prompt": "You are a LinkedIn profile strategist. Help me structure my independent consulting / contract work into a single high-impact Experience section entry.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Contract / Freelance Experience Details:\n[PASTE DUTIES]\n\nGenerate an Experience entry featuring an Umbrella Scope statement, 3 anonymized client case study spotlights with metrics, and a summary of core technical capabilities.",
+    "pro_tips": [
+      "Group short contracts under one umbrella company entry to avoid looking like a job hopper.",
+      "Focus on business outcomes delivered for clients rather than hours worked."
+    ]
+  },
+  {
+    "id": 16,
+    "section": "04 Experience",
+    "title": "Early Career & Internship Enhancer",
+    "description": "Present limited work history or academic projects with maximum impact.",
+    "target_gaps": [
+      "graduate",
+      "intern",
+      "early career",
+      "junior",
+      "lack of experience",
+      "student"
+    ],
+    "prompt": "You are an early-career resume coach. Reframe my entry-level experience to maximize commercial appeal.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Raw Experience & Projects:\n[PASTE DUTIES]\n\nProduce high-impact bullets that frame capstones or internships as real-world client engagement outcomes and emphasize technical proficiency.",
+    "pro_tips": [
+      "Frame academic capstone projects like real client projects by emphasizing tools and results."
+    ]
+  },
+  {
+    "id": 17,
+    "section": "05 Contact & Top Skills",
+    "title": "Top Skills Prioritization & SEO Matrix",
+    "description": "Organize and optimize your skills list for ATS and recruiter search.",
+    "target_gaps": [
+      "skills",
+      "endorsements",
+      "missing skills",
+      "hard skills",
+      "soft skills"
+    ],
+    "prompt": "You are a LinkedIn search algorithm expert. Optimize my profile skills list for maximum recruiter search visibility.\n\nTarget Role: [TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\nCurrent Listed Skills: [PASTE SKILLS LIST]\n\nDeliver:\n1. TOP 3 PINNED SKILLS: Select the exact 3 skills to pin to the top of the profile.\n2. CATEGORIZED MATRIX: Group remaining skills into Hard Tech Skills, Domain Methodologies, and Soft Leadership Skills.\n3. GAP ANALYSIS: List 5 missing high-volume skills commonly found in target job postings.",
+    "pro_tips": [
+      "Pin your top 3 most relevant skills to your target role at the top of the Skills section.",
+      "LinkedIn allows up to 50 skills—fill as many relevant slots as possible."
+    ]
+  },
+  {
+    "id": 18,
+    "section": "05 Contact & Top Skills",
+    "title": "Skills Gap Analysis vs Target JDs",
+    "description": "Identify missing skills by analyzing target job descriptions.",
+    "target_gaps": [
+      "gap analysis",
+      "missing requirements",
+      "upskill",
+      "target role",
+      "jd"
+    ],
+    "prompt": "You are a talent analytics specialist. Compare my skills against target job requirements.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- My Current Skills: [PASTE SKILLS LIST]\n\nDeliver:\n1. Skills Frequency Matrix (Mandatory vs Nice-to-Have)\n2. Immediate Skills to Add to Profile\n3. 30-Day Upskilling Priorities.",
+    "pro_tips": [
+      "If a skill appears in 80%+ of target JDs, it must appear in your Headline, About, and Skills sections."
+    ]
+  },
+  {
+    "id": 19,
+    "section": "05 Contact & Top Skills",
+    "title": "Endorsement Request Script Generator",
+    "description": "Craft natural outreach messages to request skill endorsements.",
+    "target_gaps": [
+      "ask endorsements",
+      "request",
+      "social proof",
+      "colleagues",
+      "validate"
+    ],
+    "prompt": "You are a professional communications coach. Generate natural, non-awkward message scripts to request LinkedIn skill endorsements.\n\nTarget Role: [TARGET ROLE]\nTop Skills to Validate: [PASTE SKILLS LIST]\n\nProvide:\n1. Short LinkedIn DM (Under 300 characters)\n2. InMail / Email Version\n3. Reciprocal endorsement strategy (endorsing them first).",
+    "pro_tips": [
+      "Endorse 3-5 skills on your colleague's profile before sending a request.",
+      "Target former managers for endorsements on core leadership skills."
+    ]
+  },
+  {
+    "id": 20,
+    "section": "05 Contact & Top Skills",
+    "title": "LinkedIn Search Ranking & SEO Guide",
+    "description": "Actionable guide to improving your search ranking for specific keywords.",
+    "target_gaps": [
+      "ranking",
+      "algorithm",
+      "seo",
+      "visibility",
+      "search",
+      "index"
+    ],
+    "prompt": "You are a LinkedIn algorithm expert. Provide an SEO guide to help my profile rank in the top 5% of recruiter searches.\n\nInputs:\n- Target Search Keywords: [TARGET ROLE] in [YOUR TARGET INDUSTRY]\n- Extracted Profile Context:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nDeliver a field-by-field optimization checklist and 5 high-impact activities that signal freshness to the search algorithm.",
+    "pro_tips": [
+      "Completing every profile field provides an 'All-Star' algorithm boost."
+    ]
+  },
+  {
+    "id": 21,
+    "section": "06 Certifications, Patents & Awards",
+    "title": "Technical Authority & Patent Highlight Strategy",
+    "description": "Format patents, honors, and certifications to maximize domain authority.",
+    "target_gaps": [
+      "patents",
+      "awards",
+      "honors",
+      "certifications",
+      "publications"
+    ],
+    "prompt": "You are a technical talent strategist. Reformat my listed certifications, patents, and honors into impact statements that establish technical authority.\n\nRaw Listings:\n[PASTE PATENTS, CERTIFICATIONS, AND AWARDS FROM PDF]\n\nDeliver:\n1. REFORMATTED SECTION: Clear titles, issuing bodies, dates, and concise 1-2 sentence descriptions detailing business/technical significance.\n2. SUMMARY INTEGRATION: How to reference top patents/awards in the main About narrative.",
+    "pro_tips": [
+      "Include patent numbers and issuing authorities explicitly for indexing.",
+      "Explain the practical real-world application of complex technical patents."
+    ]
+  },
+  {
+    "id": 22,
+    "section": "06 Certifications, Patents & Awards",
+    "title": "Certification & Credential Maximizer",
+    "description": "Highlight relevant certifications to pass recruiter ATS filters.",
+    "target_gaps": [
+      "certifications",
+      "courses",
+      "credentials",
+      "degrees",
+      "license"
+    ],
+    "prompt": "You are an ATS optimization specialist. Reformat my certifications list for maximum recruiter impact.\n\nCertifications Input:\n[PASTE PATENTS, CERTIFICATIONS, AND AWARDS FROM PDF]\n\nTarget Role: [TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\n\nOrganize certifications by relevance, bold key accredited institutions, and highlight high-value industry licenses.",
+    "pro_tips": [
+      "Always spell out full certification names alongside common acronyms (e.g., AWS Certified Solutions Architect)."
+    ]
+  },
+  {
+    "id": 23,
+    "section": "06 Certifications, Patents & Awards",
+    "title": "Honors & Awards Contextualizer",
+    "description": "Turn internal or industry awards into compelling social proof.",
+    "target_gaps": [
+      "awards",
+      "honors",
+      "recognition",
+      "winner",
+      "achievement award"
+    ],
+    "prompt": "You are an executive storyteller. Reformat my raw awards and honors into impressive achievements.\n\nRaw Awards / Certifications:\n[PASTE PATENTS, CERTIFICATIONS, AND AWARDS FROM PDF]\n\nFor each award, add context explaining the selection criteria (e.g., 'Chosen out of 500+ engineers') and business impact.",
+    "pro_tips": [
+      "Quantify the selectivity of the award to make its value clear to outside recruiters."
+    ]
+  },
+  {
+    "id": 24,
+    "section": "07 Recommendations",
+    "title": "Recommendation Acquisition Strategy & Brief",
+    "description": "Develop a targeted request strategy and brief for recommenders.",
+    "target_gaps": [
+      "recommendations",
+      "social proof",
+      "testimonials",
+      "credibility",
+      "references"
+    ],
+    "prompt": "You are an executive personal branding coach. I need a strategy and briefing template to request high-value LinkedIn recommendations.\n\nTarget Role Context: [TARGET ROLE] in [YOUR TARGET INDUSTRY]\nRaw Experience Context: [PASTE DUTIES]\n\nGenerate:\n1. Personal outreach message requesting the recommendation.\n2. A 3-bullet briefing note outlining specific projects and metrics they can mention to make writing it effortless for them.",
+    "pro_tips": [
+      "Giving your recommender a short bulleted brief dramatically increases response rate and quality.",
+      "Aim for a balance of upward (managers), peer, and client recommendations."
+    ]
+  },
+  {
+    "id": 25,
+    "section": "07 Recommendations",
+    "title": "Ghost-Write a Colleague Recommendation",
+    "description": "Write a powerful recommendation to give to a colleague or team member.",
+    "target_gaps": [
+      "write recommendation",
+      "give recommendation",
+      "praise",
+      "endorse colleague"
+    ],
+    "prompt": "You are a professional business writer. Ghost-write a compelling LinkedIn recommendation for a colleague.\n\nTarget Domain / Context: [YOUR TARGET INDUSTRY]\nTarget Role Alignment: [TARGET ROLE]\n\nGenerate 3 versions:\n1. CONCISE IMPACT (100-120 words)\n2. STORY-DRIVEN (150-200 words)\n3. LEADERSHIP & CHARACTER FOCUS (120-150 words)\nEnsure all options open with a specific achievement claim rather than generic pleasantries.",
+    "pro_tips": [
+      "Avoid opening with 'It was a pleasure to work with...'. Lead directly with their primary strength.",
+      "Highlighting one concrete win is more persuasive than general praise."
+    ]
+  },
+  {
+    "id": 26,
+    "section": "07 Recommendations",
+    "title": "Recommendation Gratitude & Relationship Maintainer",
+    "description": "Respond to recommendations to build long-term network goodwill.",
+    "target_gaps": [
+      "thank you",
+      "gratitude",
+      "respond",
+      "relationship",
+      "reply"
+    ],
+    "prompt": "You are a relationship management strategist. Craft a thoughtful response to a received recommendation.\n\nContext:\nTarget Role: [TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\n\nProvide a warm thank-you message and a reciprocal offer strategy.",
+    "pro_tips": [
+      "Quote a specific line from their recommendation in your thank-you note."
+    ]
+  },
+  {
+    "id": 27,
+    "section": "08 Featured Section & Media",
+    "title": "Featured Section Portfolio Strategy",
+    "description": "Convert your Featured section into a visual portfolio that converts.",
+    "target_gaps": [
+      "featured",
+      "portfolio",
+      "media",
+      "visuals",
+      "links",
+      "showcase"
+    ],
+    "prompt": "You are a personal branding strategist. Design an optimal layout strategy for my LinkedIn Featured section.\n\nTarget Role: [TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\nExtracted Background Data:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nDeliver:\n1. TOP 3 FEATURED ITEMS: Selected and ordered by conversion impact.\n2. CUSTOM HEADLINES & DESCRIPTIONS: Optimized 2-line captions for each item.\n3. VISUAL THUMBNAIL RECOMMENDATIONS: Imagery or cover styles to maximize clicks.",
+    "pro_tips": [
+      "Use custom 16:9 thumbnail graphics for external links in the Featured section.",
+      "Feature top-performing posts or PDF carousel slides for higher engagement."
+    ]
+  },
+  {
+    "id": 28,
+    "section": "08 Featured Section & Media",
+    "title": "PDF Carousel & Document Showcase Builder",
+    "description": "Structure technical slides or case studies for the Featured section.",
+    "target_gaps": [
+      "carousel",
+      "pdf document",
+      "presentation",
+      "slides",
+      "case study"
+    ],
+    "prompt": "You are a LinkedIn visual content strategist. Outline a 5-slide PDF carousel document to highlight in my Featured section.\n\nTarget Role: [TARGET ROLE]\nTarget Industry: [YOUR TARGET INDUSTRY]\nTopic / Core Case Study:\n[PASTE DUTIES]\n\nProvide Slide-by-Slide Copy (Hook, Architecture/Problem, Solution, Results, CTA).",
+    "pro_tips": [
+      "PDF carousels consistently generate higher dwell time than single static image posts."
+    ]
+  },
+  {
+    "id": 29,
+    "section": "08 Featured Section & Media",
+    "title": "Rich Media & External Link Optimizer",
+    "description": "Optimize descriptions for featured portfolio links, github, or press.",
+    "target_gaps": [
+      "links",
+      "github",
+      "portfolio link",
+      "press",
+      "website"
+    ],
+    "prompt": "You are a CRO copywriter. Write engaging 2-sentence descriptions for my featured links (GitHub, Portfolio, Articles) that compel target [YOUR TARGET INDUSTRY] recruiters to click.",
+    "pro_tips": [
+      "Clear, benefit-driven link titles outperform simple URLs."
+    ]
+  },
+  {
+    "id": 30,
+    "section": "09 Content Strategy & Posting",
+    "title": "30-Day Thought Leadership Content Calendar",
+    "description": "A structured 30-day posting strategy aligned with your target role.",
+    "target_gaps": [
+      "content",
+      "posting",
+      "calendar",
+      "schedule",
+      "consistency",
+      "algorithm"
+    ],
+    "prompt": "You are a LinkedIn content strategist. Build a 30-day content execution plan based on my expertise.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Core Capabilities: [PASTE SKILLS LIST]\n- Posting Frequency: 3x per week (12 posts total)\n\nProvide a table detailing:\n1. Post Number & Day\n2. Content Pillar (Educational, Case Study, Industry Hot-Take, Personal Story)\n3. Attention Hook (First Line)\n4. Outline / Core Key Takeaway\n5. Call to Action (CTA)",
+    "pro_tips": [
+      "Consistency is rewarded by the algorithm; 3 high-quality posts per week beat daily low-effort posts.",
+      "Engage in the comments section for 15 minutes immediately after posting."
+    ]
+  },
+  {
+    "id": 31,
+    "section": "09 Content Strategy & Posting",
+    "title": "Viral Hook & Post Structure Generator",
+    "description": "Craft high-engagement posts using proven attention-grabbing hooks.",
+    "target_gaps": [
+      "viral",
+      "hook",
+      "engagement",
+      "reach",
+      "post structure",
+      "views"
+    ],
+    "prompt": "You are a LinkedIn copywriting expert. I want to write a post about key trends in [YOUR TARGET INDUSTRY].\n\nGenerate:\n1. 5 Attention-Grabbing Hooks targeting [TARGET ROLE] hiring managers\n2. Body Structure (Short paragraphs, white space, bulleted insights)\n3. Conversation-Starting Question for the CTA.",
+    "pro_tips": [
+      "Format posts with 1-2 sentence paragraphs for optimal mobile scannability."
+    ]
+  },
+  {
+    "id": 32,
+    "section": "09 Content Strategy & Posting",
+    "title": "Long-Form Thought Leadership Article Blueprint",
+    "description": "Structure in-depth articles that establish deep domain expertise.",
+    "target_gaps": [
+      "article",
+      "long-form",
+      "thought leadership",
+      "blog",
+      "expertise"
+    ],
+    "prompt": "You are an executive content strategist. Outline a long-form LinkedIn Article focusing on challenges in [YOUR TARGET INDUSTRY].\n\nProvide: 3 SEO Title Options, Executive Summary, 4 Section Headings, and Key Takeaways relevant to a [TARGET ROLE].",
+    "pro_tips": [
+      "LinkedIn Articles index on Google Search—use target keyword phrases in main headings."
+    ]
+  },
+  {
+    "id": 33,
+    "section": "10 Outreach & Networking",
+    "title": "High-Conversion Connection Request & DM",
+    "description": "A multi-touch networking sequence designed to build genuine rapport.",
+    "target_gaps": [
+      "cold dm",
+      "outreach",
+      "sequence",
+      "pitch",
+      "message",
+      "inmail",
+      "networking"
+    ],
+    "prompt": "You are an executive networking coach. Build a 3-touch outreach message sequence to initiate connections with decision-makers without sounding salesy.\n\nInputs:\n- Target Persona: Hiring Managers for [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- My Background Summary:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nDeliver:\n1. CONNECTION REQUEST (Strictly under 300 characters)\n2. WELCOME / VALUE-ADD DM (To send 24 hours after connection acceptance)\n3. SOFT CALL-TO-ACTION DM (To send 4-5 days later requesting a brief 10-min chat).",
+    "pro_tips": [
+      "Never pitch your resume or service in the initial connection request.",
+      "Personalize the connection note by mentioning a specific post or mutual group."
+    ]
+  },
+  {
+    "id": 34,
+    "section": "10 Outreach & Networking",
+    "title": "Recruiter InMail Response Strategy",
+    "description": "Convert inbound recruiter messages into high-leverage interviews.",
+    "target_gaps": [
+      "recruiter",
+      "inmail",
+      "response",
+      "interview ask",
+      "salary pitch"
+    ],
+    "prompt": "You are a career negotiation coach. Craft a professional response to a recruiter InMail for a [TARGET ROLE] position in [YOUR TARGET INDUSTRY].\n\nProvide 2 options:\n1. Actively Interested (asking for scope, team, and salary range)\n2. Passive / Future Relationship Building.",
+    "pro_tips": [
+      "Politely asking for salary ranges early saves time for both parties."
+    ]
+  },
+  {
+    "id": 35,
+    "section": "10 Outreach & Networking",
+    "title": "Alumni & Warm Referral Outreach Builder",
+    "description": "Leverage shared backgrounds to ask for internal company referrals.",
+    "target_gaps": [
+      "alumni",
+      "referral",
+      "warm intro",
+      "networking",
+      "university"
+    ],
+    "prompt": "You are a networking coach. Draft a short, warm outreach message to an alumnus working in [YOUR TARGET INDUSTRY] as a [TARGET ROLE]. Keep it under 400 characters.",
+    "pro_tips": [
+      "Shared alumni status increases connection acceptance rates significantly."
+    ]
+  },
+  {
+    "id": 36,
+    "section": "10 Outreach & Networking",
+    "title": "Event & Conference Networking Follow-Up",
+    "description": "Follow up with contacts met at conferences or online events.",
+    "target_gaps": [
+      "event",
+      "conference",
+      "follow up",
+      "meet",
+      "webinar",
+      "networking"
+    ],
+    "prompt": "You are a professional networking strategist. Draft a personalized LinkedIn follow-up message to send within 24 hours of meeting a decision-maker at an industry event.\n\nInputs:\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Target Role: [TARGET ROLE]\n- Context: Meeting at an industry conference or webinar\n\nDeliver:\n1. CONNECTION NOTE (Strictly under 300 characters)\n2. FOLLOW-UP DM WITH VALUE-ADD (Under 500 characters)",
+    "pro_tips": [
+      "Reference a specific discussion topic from the event to trigger memory.",
+      "Send follow-ups within 24-48 hours while the encounter is still fresh."
+    ]
+  },
+  {
+    "id": 37,
+    "section": "10 Outreach & Networking",
+    "title": "Informational Interview Request Engine",
+    "description": "Request low-friction 15-minute chats with target domain leaders.",
+    "target_gaps": [
+      "informational interview",
+      "coffee chat",
+      "advice",
+      "outreach",
+      "networking"
+    ],
+    "prompt": "You are a career development specialist. Craft an outreach script requesting a 15-minute informational interview with a senior leader in my target domain.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Profile Summary:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nGenerate a low-friction message emphasizing advice and domain insights rather than asking for a job directly.",
+    "pro_tips": [
+      "Focus the request on seeking advice or industry insights—never directly ask for a job.",
+      "Keep requested time short (15 minutes max) to lower the barrier to entry."
+    ]
+  },
+  {
+    "id": 38,
+    "section": "10 Outreach & Networking",
+    "title": "Executive Recruiter Pitch & Retainer Engagement",
+    "description": "Position senior leaders for executive recruiter outreach and retainers.",
+    "target_gaps": [
+      "executive",
+      "headhunter",
+      "retainer",
+      "c-suite",
+      "vp",
+      "director"
+    ],
+    "prompt": "You are an executive recruiter advisor. Build an executive pitch note to send to headhunters and executive search partners.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Raw Experience Scope:\n[PASTE DUTIES]\n\nDraft a concise, executive-level pitch outlining domain mastery, recent quantifiable business impact, and strategic scope.",
+    "pro_tips": [
+      "Executive search firms focus on scale, scope, P&L responsibility, and team size.",
+      "Keep executive outreach crisp, professional, and data-dense."
+    ]
+  },
+  {
+    "id": 39,
+    "section": "11 Post-Interview & Maintenance",
+    "title": "Post-Interview Thank You & Strategic Value-Add",
+    "description": "Leverage post-interview LinkedIn outreach to reinforce key strengths.",
+    "target_gaps": [
+      "post-interview",
+      "thank you",
+      "followup",
+      "interview",
+      "hiring manager"
+    ],
+    "prompt": "You are an executive career advisor. Draft a post-interview follow-up message to send to a hiring manager on LinkedIn.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Core Profile Strengths:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nDraft a message expressing gratitude, referencing a specific strategic problem in [YOUR TARGET INDUSTRY], and framing your expertise as a clear solution.",
+    "pro_tips": [
+      "Send LinkedIn follow-ups within 24 hours of your interview.",
+      "Addressing a specific challenge discussed in the interview positions you as an immediate problem solver."
+    ]
+  },
+  {
+    "id": 40,
+    "section": "11 Post-Interview & Maintenance",
+    "title": "Quarterly Profile Refresh & ATS Keyword Audit",
+    "description": "Maintain high search placement with periodic keyword and milestone updates.",
+    "target_gaps": [
+      "quarterly",
+      "refresh",
+      "ats audit",
+      "maintenance",
+      "update profile",
+      "seo"
+    ],
+    "prompt": "You are a LinkedIn SEO and profile optimization specialist. Create a quarterly profile refresh roadmap based on my latest quarterly progress.\n\nInputs:\n- Target Role: [TARGET ROLE]\n- Target Industry: [YOUR TARGET INDUSTRY]\n- Current Profile Data:\n[PASTE EXTRACTED PDF TEXT HERE]\n\nProvide a step-by-step checklist to update Headline, Experience bullets, Skills, and Featured sections to reflect recent impact without disrupting existing search indexing.",
+    "pro_tips": [
+      "Updating your profile quarterly signals activity to the LinkedIn search algorithm.",
+      "Rotational updates keep your experience metrics aligned with your current scope."
+    ]
+  }
+]
