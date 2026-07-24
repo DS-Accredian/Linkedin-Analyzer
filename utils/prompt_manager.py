@@ -100,7 +100,11 @@ def analyze_gaps_with_groq(profile_sections: dict, strategy_inputs: dict) -> dic
             "gaps": [
                 {
                     "title": "API Key Missing",
-                    "explanation": "The application could not connect to Groq API because GROQ_API_KEY is not configured.",
+                    "location": "System Configuration",
+                    "profile_excerpt": "N/A",
+                    "specific_issue": "GROQ_API_KEY environment variable is missing or unconfigured.",
+                    "strategic_impact": "The application could not connect to Groq API because GROQ_API_KEY is not configured.",
+                    "why_it_matters": "The application could not connect to Groq API because GROQ_API_KEY is not configured.",
                     "recommended_prompt_id": 1
                 }
             ],
@@ -120,13 +124,16 @@ def analyze_gaps_with_groq(profile_sections: dict, strategy_inputs: dict) -> dic
     system_instruction = (
         "You are an expert technical recruiter and personal branding strategist.\n"
         "Analyze the user's LinkedIn profile sections and their target career strategy.\n"
-        "Perform a gap analysis between their current profile and their target role/industry.\n"
+        "Perform a deep gap analysis between their current profile text and their target role, industry, and decision maker.\n"
         "Recommend the most relevant prompt templates from the catalog to help them optimize their profile.\n"
-        "You must respond in JSON format with one key:\n"
-        "1. 'gap_analysis': a list of objects detailing specific, actionable gaps identified in their profile. Each object must have exactly three keys:\n"
-        "   - 'title': The name/title of the gap (e.g. 'Missing Quantifiable Impact')\n"
-        "   - 'explanation': A brief explanation of what this means and why it matters\n"
-        "   - 'recommended_prompt_id': The ID (integer) of the recommended prompt template from the catalog that best addresses this specific gap.\n"
+        "You must respond in JSON format with a single key 'gap_analysis' containing a list of at most 3 specific, actionable gaps identified in their profile.\n"
+        "Each object in the 'gap_analysis' list must have exactly six keys:\n"
+        "   - 'title': A sharp, concise gap title (e.g. 'Missing Quantifiable Metrics in Leadership Roles')\n"
+        "   - 'location': Exact section or role in the profile where the issue exists (e.g. 'Experience — Senior Full Stack Lead')\n"
+        "   - 'profile_excerpt': An exact quote or concise summary of the weak/flawed text found in their PDF profile\n"
+        "   - 'specific_issue': Detailed explanation of exactly what is wrong or missing in that specific excerpt\n"
+        "   - 'strategic_impact': Detailed explanation of why this specific flaw turns off their target decision maker (e.g. 'Technical Recruiters filter out candidates who list duties without mentioning tech stack or scale metrics.')\n"
+        "   - 'recommended_prompt_id': The integer ID of the recommended prompt template from the catalog that best addresses this specific gap.\n"
         "Make sure to return ONLY a valid JSON object."
     )
     
@@ -191,16 +198,25 @@ Here are the available prompt templates to recommend from (ID, Title, Descriptio
                     p_id = int(p_id) if p_id is not None else 1
                 except ValueError:
                     p_id = 1
+                strat_impact = gap.get("strategic_impact", gap.get("why_it_matters", gap.get("explanation", "No details provided")))
                 validated_gaps.append({
                     "title": gap.get("title", gap.get("name", "Identified Gap")),
-                    "explanation": gap.get("explanation", gap.get("meaning", "No details provided")),
+                    "location": gap.get("location", gap.get("section", "General Profile")),
+                    "profile_excerpt": gap.get("profile_excerpt", gap.get("excerpt", "N/A")),
+                    "specific_issue": gap.get("specific_issue", gap.get("issue", "No specific issue provided")),
+                    "strategic_impact": strat_impact,
+                    "why_it_matters": strat_impact,
                     "recommended_prompt_id": p_id
                 })
                 selected_prompt_ids.append(p_id)
             else:
                 validated_gaps.append({
                     "title": "Identified Gap",
-                    "explanation": str(gap),
+                    "location": "General Profile",
+                    "profile_excerpt": "N/A",
+                    "specific_issue": str(gap),
+                    "strategic_impact": str(gap),
+                    "why_it_matters": str(gap),
                     "recommended_prompt_id": 1
                 })
                 selected_prompt_ids.append(1)
@@ -224,7 +240,11 @@ Here are the available prompt templates to recommend from (ID, Title, Descriptio
             "gaps": [
                 {
                     "title": "Groq API Query Error",
-                    "explanation": f"Groq API call failed or timed out. Details: {str(e)}",
+                    "location": "API Communication",
+                    "profile_excerpt": "N/A",
+                    "specific_issue": "Groq API call failed or timed out.",
+                    "strategic_impact": f"Groq API call failed or timed out. Details: {str(e)}",
+                    "why_it_matters": f"Groq API call failed or timed out. Details: {str(e)}",
                     "recommended_prompt_id": fallback_ids[0] if fallback_ids else 1
                 }
             ],
