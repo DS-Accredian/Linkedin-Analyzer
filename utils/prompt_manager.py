@@ -1,4 +1,3 @@
-
 import os
 import json
 from dotenv import load_dotenv
@@ -195,13 +194,22 @@ def analyze_gaps_with_groq(profile_sections: dict, strategy_inputs: dict) -> dic
     if isinstance(decision_maker_val, list):
         decision_maker_val = ", ".join(decision_maker_val)
         
+    user_text_val = strategy_inputs.get('user_text', strategy_inputs.get('weakness', 'N/A'))
+    core_challenge_val = strategy_inputs.get('user_core_challenge', strategy_inputs.get('weakness', 'N/A'))
+    keywords_list = strategy_inputs.get('target_skill_keywords', [])
+    keywords_val = ", ".join(keywords_list) if isinstance(keywords_list, list) and keywords_list else "N/A"
+    narrative_val = strategy_inputs.get('career_transition_narrative', 'N/A')
+
     user_message = f"""
 Here is the user's strategy:
 - Target Role: {target_role_val}
 - Target Industry: {target_industry_val}
 - Target Decision Maker: {decision_maker_val}
-- Key Weakness/Gap to Address: {strategy_inputs.get('weakness', 'N/A')}
 - Target Seniority: {strategy_inputs.get('seniority', 'N/A')}
+- User Free-Text Input: {user_text_val}
+- Core Challenge to Address: {core_challenge_val}
+- Explicit Target Skill Keywords: {keywords_val}
+- Career Transition Narrative: {narrative_val}
 
 Here are the extracted sections of the user's LinkedIn Profile:
 - Summary/About:
@@ -319,6 +327,61 @@ Here are the available prompt templates to recommend from (ID, Title, Descriptio
             "selected_prompt_ids": fallback_ids
         }
 
+def extract_nlp_themes_from_text(user_text: str) -> dict:
+    """
+    Uses Groq JSON mode (llama-3.3-70b-versatile) to extract target_skill_keywords,
+    user_core_challenge, and career_transition_narrative from the user's free-text input.
+    """
+    api_key = get_groq_api_key()
+    default_res = {
+        "user_core_challenge": user_text.strip() if user_text and user_text.strip() else "Profile positioning optimization",
+        "target_skill_keywords": [],
+        "career_transition_narrative": user_text.strip() if user_text and user_text.strip() else "Optimize profile for target role positioning"
+    }
+
+    if not api_key or not user_text or not user_text.strip():
+        return default_res
+
+    system_instruction = (
+        "You are an expert NLP keyword and theme extractor for executive resume and LinkedIn profile positioning.\n"
+        "Analyze the user's free-text description of their career transition, challenges, and target keywords.\n"
+        "Extract structured positioning themes and respond strictly in JSON format with a single object containing these 3 exact keys:\n"
+        "  - 'user_core_challenge': Concise summary of what the candidate wants to fix or overcome in their profile.\n"
+        "  - 'target_skill_keywords': An array of strings representing specific technical/business keywords, tools, or skills mentioned or heavily implied.\n"
+        "  - 'career_transition_narrative': A concise 1-2 sentence narrative summarizing their target career transition direction.\n"
+        "Make sure to return ONLY a valid JSON object."
+    )
+
+    user_message = f"Here is the candidate's free-text input:\n\n{user_text.strip()}"
+
+    try:
+        client = Groq(api_key=api_key)
+        response = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {"role": "system", "content": system_instruction},
+                {"role": "user", "content": user_message}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.2
+        )
+        result = json.loads(response.choices[0].message.content)
+        if isinstance(result, dict):
+            raw_keywords = result.get("target_skill_keywords", [])
+            if not isinstance(raw_keywords, list):
+                if isinstance(raw_keywords, str):
+                    raw_keywords = [k.strip() for k in raw_keywords.split(",") if k.strip()]
+                else:
+                    raw_keywords = []
+            return {
+                "user_core_challenge": str(result.get("user_core_challenge", default_res["user_core_challenge"])),
+                "target_skill_keywords": raw_keywords,
+                "career_transition_narrative": str(result.get("career_transition_narrative", default_res["career_transition_narrative"]))
+            }
+        return default_res
+    except Exception:
+        return default_res
+
 def predict_career_next_step(pdf_text: str) -> dict:
     """
     Analyzes the user's PDF profile text using Groq JSON mode to predict their current role/industry
@@ -394,9 +457,18 @@ def clean_title(raw_title: str) -> str:
 
 def populate_prompt_template(template: str, profile_sections: dict, strategy_inputs: dict) -> str:
     """
-    Replaces dynamic placeholders with user PDF data and strategy inputs,
-    and appends the master ATS_FRAMEWORK_DIRECTIVE.
+    Replaces dynamic placeholders with user PDF data and strategy inputs (including Groq NLP extracted themes),
+    injects candidate custom keywords and narrative positioning, and appends the master ATS_FRAMEWORK_DIRECTIVE.
     """
+    core_challenge = strategy_inputs.get("user_core_challenge") or strategy_inputs.get("weakness") or strategy_inputs.get("user_text", "")
+    raw_keywords = strategy_inputs.get("target_skill_keywords", [])
+    if isinstance(raw_keywords, list):
+        keywords_str = ", ".join([str(k) for k in raw_keywords if k])
+    else:
+        keywords_str = str(raw_keywords) if raw_keywords else ""
+    transition_narrative = strategy_inputs.get("career_transition_narrative") or strategy_inputs.get("user_text", "")
+    user_text = strategy_inputs.get("user_text", "")
+
     replacements = {
         "[YOUR TARGET INDUSTRY]": strategy_inputs.get("target_industry", ""),
         "[TARGET INDUSTRY]": strategy_inputs.get("target_industry", ""),
@@ -404,7 +476,17 @@ def populate_prompt_template(template: str, profile_sections: dict, strategy_inp
         "[TARGET ROLE]": strategy_inputs.get("target_role", ""),
         "[DECISION MAKER]": strategy_inputs.get("decision_maker", ""),
         "[DECISION_MAKER]": strategy_inputs.get("decision_maker", ""),
-        "[WEAKNESS]": strategy_inputs.get("weakness", ""),
+        "[WEAKNESS]": core_challenge,
+        "[USER_CORE_CHALLENGE]": core_challenge,
+        "[CORE_CHALLENGE]": core_challenge,
+        "[TARGET_SKILL_KEYWORDS]": keywords_str,
+        "[CUSTOM_KEYWORDS]": keywords_str,
+        "[TARGET_KEYWORDS]": keywords_str,
+        "[CAREER_TRANSITION_NARRATIVE]": transition_narrative,
+        "[TRANSITION_NARRATIVE]": transition_narrative,
+        "[CAREER_NARRATIVE]": transition_narrative,
+        "[USER_TEXT]": user_text,
+        "[USER_FREE_TEXT]": user_text,
         "[SENIORITY]": strategy_inputs.get("seniority", ""),
         "[PASTE EXTRACTED PDF TEXT HERE]": (
             f"Summary/About:\n{profile_sections.get('Summary', '')}\n\n"
@@ -429,11 +511,35 @@ def populate_prompt_template(template: str, profile_sections: dict, strategy_inp
         if value is None:
             value = ""
         filled_prompt = filled_prompt.replace(placeholder, str(value))
+
+    # Construct custom candidate positioning block if free text/themes exist
+    nlp_block_lines = []
+    if core_challenge:
+        nlp_block_lines.append(f"- Candidate Core Challenge / Positioning Focus: {core_challenge}")
+    if keywords_str:
+        nlp_block_lines.append(f"- Explicit Target Keywords & Tech Stack to Emphasize: {keywords_str}")
+    if transition_narrative:
+        nlp_block_lines.append(f"- Target Career Transition Narrative: {transition_narrative}")
+    if user_text and user_text != transition_narrative:
+        nlp_block_lines.append(f"- Candidate's Stated Goals (Raw Input): {user_text}")
+
+    if nlp_block_lines:
+        nlp_context_str = "\n".join(nlp_block_lines)
+        nlp_section = (
+            "\n\n================================================================================\n"
+            "CANDIDATE CUSTOM POSITIONING & TARGET KEYWORDS (HIGH PRIORITY OVERRIDE)\n"
+            "================================================================================\n"
+            f"{nlp_context_str}\n"
+            "================================================================================"
+        )
+        if "CANDIDATE CUSTOM POSITIONING & TARGET KEYWORDS" not in filled_prompt:
+            filled_prompt = filled_prompt.strip() + nlp_section
         
     if ATS_FRAMEWORK_DIRECTIVE.strip() not in filled_prompt:
         filled_prompt = filled_prompt.strip() + "\n\n" + ATS_FRAMEWORK_DIRECTIVE.strip()
         
     return filled_prompt
+
 
 
 #-------------------------------------
