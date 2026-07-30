@@ -1,4 +1,3 @@
-
 import streamlit as st
 import streamlit.components.v1 as components
 import json
@@ -8,6 +7,7 @@ from utils.prompt_manager import (
     analyze_gaps_with_groq,
     populate_prompt_template,
     predict_career_next_step,
+    extract_nlp_themes_from_text,
     clean_title
 )
 
@@ -232,7 +232,11 @@ elif st.session_state.step == 2:
     prev_industry = st.session_state.strategy_inputs.get("target_industry") or defaults.get("predicted_industry", "")
     prev_role = st.session_state.strategy_inputs.get("target_role") or defaults.get("logical_next_role", "")
     prev_target = st.session_state.strategy_inputs.get("decision_maker") or defaults.get("target_decision_maker", "")
-    prev_weakness = st.session_state.strategy_inputs.get("weakness") or defaults.get("key_weakness", "")
+    prev_user_text = (
+        st.session_state.strategy_inputs.get("user_text")
+        or st.session_state.strategy_inputs.get("weakness")
+        or defaults.get("key_weakness", "")
+    )
     prev_seniority = st.session_state.strategy_inputs.get("seniority") or defaults.get("logical_seniority", "")
     
     # Find matching preset index or return None for placeholder display
@@ -293,23 +297,22 @@ elif st.session_state.step == 2:
         if "➕ Other / Type Custom..." in target_sel or "Other (Specify custom...)" in target_sel:
             custom_target = st.text_input("Enter Custom Target Decision Maker", value=prev_target if prev_target not in target_options else "", placeholder="e.g. Startup Founders, Venture Capitalists")
             
-        # Key Weakness / Gap Selection
-        weakness_sel = st.selectbox(
-            "Key Profile Weakness / Main Gap to Solve",
-            options=weakness_options,
-            index=get_preset_index(prev_weakness, weakness_options),
-            placeholder="Select key weakness or main gap to solve..."
+        # Free-Text Career Goals & Profile Challenges
+        user_text_input = st.text_area(
+            "Describe your main career goals, target transition, or profile challenges in your own words:",
+            value=prev_user_text,
+            height=130,
+            placeholder="e.g., I'm a Senior Backend Engineer aiming to transition into an AI/ML Lead role. My current profile highlights legacy Java work, but I want to emphasize my recent PyTorch projects and team mentoring..."
         )
-        custom_weakness = ""
-        if weakness_sel == "➕ Other / Type Custom..." or weakness_sel == "Other (Specify custom...)":
-            custom_weakness = st.text_area("Enter Custom Profile Weakness / Main Gap", value=prev_weakness if prev_weakness not in weakness_options else "", placeholder="e.g. Profile lacks quantifiable business metrics, or transitioning from QA to Dev")
         
         submitted = st.form_submit_button("Run AI Gap Analysis 🚀")
         
         if submitted:
             final_industry = custom_industry if (industry_sel in ["➕ Other / Type Custom...", "Other (Specify custom...)"]) else (industry_sel if industry_sel else "")
             final_role = custom_role if (role_sel in ["➕ Other / Type Custom...", "Other (Specify custom...)"]) else (role_sel if role_sel else "")
-            final_weakness = custom_weakness if (weakness_sel in ["➕ Other / Type Custom...", "Other (Specify custom...)"]) else (weakness_sel if weakness_sel else "")
+            final_user_text = user_text_input.strip() if user_text_input else ""
+            if not final_user_text:
+                final_user_text = "Optimize profile positioning for target role and industry."
             
             # Combine multiselect options
             targets_list = []
@@ -324,15 +327,22 @@ elif st.session_state.step == 2:
             if not final_role or not final_industry:
                 st.error("Please select or enter both Target Role and Target Industry to proceed.")
             else:
+                with st.spinner("Extracting positioning themes and keywords from your response..."):
+                    nlp_themes = extract_nlp_themes_from_text(final_user_text)
+
                 st.session_state.strategy_inputs = {
                     "target_role": final_role,
                     "target_industry": final_industry,
                     "seniority": seniority or "Senior",
                     "decision_maker": final_target,
-                    "weakness": final_weakness
+                    "user_text": final_user_text,
+                    "weakness": nlp_themes.get("user_core_challenge", final_user_text),
+                    "user_core_challenge": nlp_themes.get("user_core_challenge", final_user_text),
+                    "target_skill_keywords": nlp_themes.get("target_skill_keywords", []),
+                    "career_transition_narrative": nlp_themes.get("career_transition_narrative", final_user_text)
                 }
                 
-                with st.spinner("Analyzing profile gaps and selecting optimizer prompts..."):
+                with st.spinner("Analyzing profile gaps and generating tailored ATS prompts..."):
                     results = analyze_gaps_with_groq(st.session_state.profile_sections, st.session_state.strategy_inputs)
                     st.session_state.gap_analysis_results = results
                 
@@ -400,6 +410,7 @@ elif st.session_state.step == 3:
         st.session_state.strategy_inputs = {}
         st.session_state.gap_analysis_results = None
         st.rerun()
+
 
 
 
